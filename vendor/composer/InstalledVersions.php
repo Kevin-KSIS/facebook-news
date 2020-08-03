@@ -14,24 +14,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'No version set (parsed as 1.0.0)',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'f890db13d2bb6ab2725ecb59047ba5bd5bf10bcb',
     'name' => 'datlp/facebook-news',
   ),
   'versions' => 
   array (
     'datlp/facebook-news' => 
     array (
-      'pretty_version' => 'No version set (parsed as 1.0.0)',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'f890db13d2bb6ab2725ecb59047ba5bd5bf10bcb',
     ),
     'stil/gd-text' => 
     array (

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ec0e48d6f5ee41384589121eb3ab919",
+    "content-hash": "85f4e20c466405ea8625c17d6d62267f",
     "packages": [
         {
             "name": "stil/gd-text",
@@ -204,7 +204,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "ext-json": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

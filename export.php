@@ -3,8 +3,8 @@
 include_once 'functions.php';
 
 $urls = [];
-if (isset($_COOKIE['data']) and !empty($_COOKIE['data'])) {
-    $datas = json_decode($_COOKIE['data'], true);
+if (isset($_POST['data']) and !empty($_POST['data'])) {
+    $datas = json_decode($_POST['data'], true);
     $urls = export($datas);
 }
 ?>
@@ -36,22 +36,22 @@ if (isset($_COOKIE['data']) and !empty($_COOKIE['data'])) {
                 <h1 class="display-4">Export</h1>
                 <br><br>
                 <form action="/">
-                    <button type="submit" class="btn btn-info" onclick="deleteAllCookies()">Back</button>
+                    <button type="submit" class="btn btn-info" onclick="">Back</button>
                 </form>
             </div>
         </div>
     </div>
     <script>
-        function deleteAllCookies() {
-            var cookies = document.cookie.split(";");
-
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i];
-                var eqPos = cookie.indexOf("=");
-                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-            }
-        }
+        // function deleteAllCookies() {
+        //     var cookies = document.cookie.split(";");
+        //
+        //     for (var i = 0; i < cookies.length; i++) {
+        //         var cookie = cookies[i];
+        //         var eqPos = cookie.indexOf("=");
+        //         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        //         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        //     }
+        // }
 
         var urls = <?= json_encode($urls); ?>;
 

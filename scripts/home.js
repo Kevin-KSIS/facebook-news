@@ -47,6 +47,7 @@ $('.yes').click(function(event){
 })
 
 $("#export").click(function(event) {
+    console.log(event.target)
     var say_yes = $('.yes')
     var hash = null;
     var feeds_chosen = [];
@@ -59,8 +60,20 @@ $("#export").click(function(event) {
             );
         }
     }
-    document.cookie = `data=` + JSON.stringify(feeds_chosen);
-    top.window.location = 'export.php';
+    // document.cookie = `data=` + JSON.stringify(feeds_chosen);
+    // top.window.location = 'export.php';
+    $.post({
+        url: '/export.php',
+        data: {
+            data: JSON.stringify(feeds_chosen)
+        },
+        success: function(d){
+            top.window.location = 'export.php';
+        },
+        error: function(e){
+            console.log(e);
+        }
+    })
 });
 
 $('#crawl').click(function (event) {
