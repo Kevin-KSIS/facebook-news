@@ -95,7 +95,7 @@ function __crawling_img($url){
 function __crop_image($url){
     if (strpos($url, '.png')){
         $image = imagecreatefrompng($url);
-    }else if (strpos($url, '.jpg')){
+    }else if (strpos($url, '.jpg') || strpos($url, '.jpeg')){
         $image = imagecreatefromjpeg($url);
     }else{
         throw new Exception("Extension not supported");
@@ -198,6 +198,6 @@ function export($datas){
         imagepng($mix_text_img, $filename);
         $results[] = $filename;
     }
-    setcookie("data", "", time(), "/");
+//    setcookie("data", "", time(), "/");
     return $results;
 }

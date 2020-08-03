@@ -31,6 +31,20 @@ feeds.forEach(function (feed, index){
 })
 
 //    Events
+var count_option = 0;
+
+$('.yes').click(function(event){
+    var input_tag = event.target;
+    var itag = $('#count');
+
+    if (input_tag.checked){
+        count_option += 1;
+    }else{
+        count_option -= 1;
+    }
+    itag.text(count_option);
+
+})
 
 $("#export").click(function(event) {
     var say_yes = $('.yes')
@@ -43,10 +57,10 @@ $("#export").click(function(event) {
             feeds_chosen.push(
                 feeds.find(item => item.hash === hash)
             );
-            document.cookie = `data=` + JSON.stringify(feeds_chosen);
-            top.window.location = 'export.php';
         }
     }
+    document.cookie = `data=` + JSON.stringify(feeds_chosen);
+    top.window.location = 'export.php';
 });
 
 $('#crawl').click(function (event) {

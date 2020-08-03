@@ -37,6 +37,12 @@ if (isset($_GET['crawl'])){
     <!-- End -->
 
     <div class="row">
+        <div class="col-lg-1 count">
+            <label>
+                <input type="checkbox"  value=""/>
+                <i class="fa" id="count" aria-hidden="true"></i>
+            </label>
+        </div>
         <div class="col-lg-8 mx-auto flx">
             <!-- List group-->
             <ul class="list-group shadow scroll sc6" id="contents">
