@@ -47,7 +47,6 @@ $('.yes').click(function(event){
 })
 
 $("#export").click(function(event) {
-    console.log(event.target)
     var say_yes = $('.yes')
     var hash = null;
     var feeds_chosen = [];
@@ -60,15 +59,22 @@ $("#export").click(function(event) {
             );
         }
     }
-    // document.cookie = `data=` + JSON.stringify(feeds_chosen);
-    // top.window.location = 'export.php';
-    $.post({
-        url: '/export.php',
+    $.ajax({
+        url: '/index.php',
+        type: "post",
         data: {
             data: JSON.stringify(feeds_chosen)
         },
-        success: function(d){
-            top.window.location = 'export.php';
+        success: function(urls, status){
+            var link = document.createElement('a');
+
+            JSON.parse(urls).forEach(function(url, index){
+                link.href = window.location.origin + '/' + url;
+                link.download = url.replace(/^.*[\\\/]/, '');
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            })
         },
         error: function(e){
             console.log(e);
