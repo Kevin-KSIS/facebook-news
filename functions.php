@@ -73,7 +73,7 @@ function __crawling_img($url){
     );
 
     $context = stream_context_create($options);
-    $html = file_get_contents($url, false, $context);
+    $html = @file_get_contents($url, false, $context);
 
     $doc = new DOMDocument();
     libxml_use_internal_errors(true);
@@ -188,16 +188,16 @@ function export($datas){
         mkdir($dest_dir, 0777, true);
 
     $results = [];
-    foreach ($datas as $data){
+    foreach ($datas as $data) {
         $frame = __DIR__ . '/images/frame-900x900.png';
         $img_src = __crawling_img($data['link']);
         $temp = __crop_image($img_src);
         $mix_img = __merge_frame($frame, $temp);
         $mix_text_img = __add_text($mix_img, $data['title']);
-        $filename = $dest_dir . $data['hash'] .'.png';
+        $filename = $dest_dir . $data['hash'] . '.png';
         imagepng($mix_text_img, $filename);
         $results[] = $filename;
     }
-//    setcookie("data", "", time(), "/");
+
     return $results;
 }

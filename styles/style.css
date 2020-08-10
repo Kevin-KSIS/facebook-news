@@ -16,8 +16,17 @@ body {
 }
 
 .container{
-    max-width: 1400px;
+    max-width: 100%;
 }
+
+h1{
+    font-size: 400%;
+}
+.button-title{
+    margin: 2% 0 0 0;
+}
+
+
 
 /* Croll bar: https://codepen.io/zkreations/pen/bZRgqd*/
 .flx {
@@ -51,11 +60,6 @@ body {
 }
 
 /* Toggle: https://codepen.io/internette/pen/BjOMWa */
-label {
-    position: relative;
-    margin: 0 -33px 0 0;
-}
-
 label input {
     appearance: none;
     -webkit-appearance: none;

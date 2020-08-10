@@ -1,0 +1,73 @@
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+
+body {
+    /*background: linear-gradient(to right, #00b09b, #96c93d);*/
+    min-height: 100vh;
+    background-image: url("/images/background.jpeg") ;
+    background-position: center ;
+    background-repeat: no-repeat ;
+    background-size: cover ;
+}
+
+.container-fluid{
+    max-width: 1400px;
+}
+
+.row{
+    display: flex;
+}
+
+.button-title{
+    margin: 1% 0 0 0;
+}
+
+/* Croll bar: https://codepen.io/zkreations/pen/bZRgqd*/
+.flx {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+}
+
+.h600 {
+    height: 600px;
+    padding: 0 0 0 -1%;
+}
+
+.cell{}
+
+.description{
+    margin-left: 2%;
+}
+
+.scroll {
+    height: 700px;
+    overflow-y: auto;
+    width: 100%;
+}
+/* Scroll 6 */
+.sc6::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+.sc6::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.sc6::-webkit-scrollbar-thumb {
+    background-color: #aab74d;
+    background-image:-webkit-linear-gradient(rgba(255,255,255,.3) 20%,transparent 20%,transparent 40%,rgba(255, 255, 255, 0.3) 40%,rgba(255,255,255,.3) 60%,transparent 60%,transparent 80%,rgba(255, 255, 255, 0.3) 80%);
+    border-radius: 10px;
+}
+
+
+/*  */
+.avatar{
+    margin: 0 0 0 -1%;
+}
