@@ -131,7 +131,7 @@ $("#export").click(function(event) {
 
     feeds_chosen.forEach(function (feed) {
         $.ajax({
-            url: '/index-v2.php',
+            url: '/index.php',
             type: "post",
             data: {
                 data: JSON.stringify([feed])
